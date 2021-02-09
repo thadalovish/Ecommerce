@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+ }
+ h {
+  font-size: 1em;
+  font-weight: bold;
+ }
+ p {
+ font-size: 0.8em;
+  padding-left: 10px;
+  padding-top:0;
+ }
+ p1 {
+  font-size: 1em;
+  font-weight: 600;
+  padding-left: 10px;
+  padding-top: 10px; 
+ padding-bottom: 0;
+ margin-top: 10px;
+ }
+ body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+ }
+ .header {
+  position: sticky;
+  position: -webkit-sticky;
+   width: 100%;
+  z-index: 800;
+ }
+ .top-alert {
+  background-color: rgb(250,242,244);
+  padding: 8px;
+  text-align: center;
+ }
+ .top-alert-text {
+  font-size: 0.6em;
+  text-align: center;
+  justify-content: center;
+  font-weight: 550;
+ }
+ a {
+  color: inherit;
+ }
+ a:hover { 
+ color: blue;
+ }
+ .menu {
+  display: flex;
+  position: relative; 
+  -webkit-box-align: center;
+  align-items: center;
+  height: 48px;
+  z-index: 800;
+  background: rgb(255, 255, 255);
+ }
+ .menu>div {
+  max-width: 1270px;
+  height: inherit;
+  min-width: 40px;
+  margin: 1%;
+  justify-content: center;
+  padding: 0px 4px;
+  font-size: 0.8em;
+ }
+ .logo-wrapper {
+  margin: 0 auto!important;
+  max-width: 130px!important;
+  min-width: 90px!important;
+ }
+ .option {
+  display: flex;
+  position: relative; 
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 39px;
+  background-color: white;
+ }
+ .option>div {
+   max-width: 150px;
+  height: inherit;
+  min-width: 40px;
+  margin: 1%;
+  justify-content: center;
+  padding: 10px;
+  font-size: 0.8em;
+  border-radius: 3px;
+  transition: all .3s ease;
+ }
+ .option>div:hover {
+  background-color: #DDD; 
+  cursor: pointer;
+  border: 1px solid grey;
+ }
+ @media (max-width: 768px) {
+  .option {
+  overflow-x: visible;
+  display: block;
+  text-align: center;
+  justify-contet: center;
+  margin: 0 auto;
+  height: auto;
+ }
+ .option>div {
+  text-align: center;
+  justify-contet: center;
+  margin: 0 auto;
+ }
+ }
+  
+ #icon {
+  height: inherit;
+  width:20px;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2%;
+ }
+ #logo {
+  width: 90%;
+  height: 28px;
+  margin-top: 7%;
+ }
+ .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+ }
+ .section {
+  border: 1px solid;
+ }
+ @media (max-width: 768px) {
+  .container {
+  grid-template-columns: none;
+ }
+  #grid-pic {
+  max-height: 580px;
+ }
+ }
+ #grid-pic {
+  height: 90vh;
+  width: 100%;
+  transition: .3s ease;
+ }
+ .text-box { 
+  height: auto;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 35vh;
+ }
+ .shopnow-button {
+  height: 70px;
+  width: 96%;
+  background-color: #121212;
+  color: white;
+  font-size: 1em;
+  font-weight: bold; 
+  border: none; 
+ border-radius: 5px;
+  margin: 0 auto; 
+  position: relative;
+  display: block;
+  transition: all .3s ease;
+ }
+ .shopnow-button:hover {
+  background-color: rgba(0,0,0,0.7);
+  cursor: pointer;
+ }
+ .wrapper {
+  padding: 5px;
+  max-width: 960px;
+  width: 95%;
+  margin: 20px auto;
+ }
+ header {
+  padding: 0 15px;
+ }
+ .wrapper-text-box {
+  width: 90%;
+  margin: 10px;
+  display: inline-block;
+ } 
+ #row-pic {
+  height: 360px;
+  width: 100%;
+ }
+ .wishlist{
+  margin-top: 15px;
+  font-size: 18px;
+ }
+ .w-100{
+   width: 100%;
+   margin-left: 0px!important;
+ }
+ .card-spacing{
+    box-shadow: 0 0 4px #d9dce7;
+    height: 510px;
+    max-width: 365px;
+    margin: 1.5em auto;
+ }
+ .favourite-wrapper{
+  position: relative;
+  bottom: 8%;
+  left: 5%;
+  color: #E35;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 5px 7px;
+  border: 3px solid #ddd;
+}
+
+  .add-to-cart-button {
+  height: 45px;
+  width: 185px;
+  background-color: #121212;
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold; 
+  border: none; 
+ border-radius: 5px;
+  margin: 0 auto; 
+  position: relative;
+  display: block;
+  transition: all .3s ease;
+ }
+ .add-to-cart-button:hover {
+  background-color: rgba(0,0,0,0.7);
+  cursor: pointer;
+ }
+ @media (max-width: 769px) {
+  .first-section-header {
+    display: none;
+ }
+ .text-box{
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+ }
+}
