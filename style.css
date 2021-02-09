@@ -201,13 +201,13 @@
     margin: 1.5em auto;
  }
  .favourite-wrapper{
-  position: relative;
-  bottom: 8%;
-  left: 5%;
+  position: absolute;
+  top: 338px;
+  left: 9%;
   color: #E35;
   font-size: 14px;
   border-radius: 5px;
-  padding: 5px 7px;
+  padding: 3px 7px;
   border: 3px solid #ddd;
 }
 
