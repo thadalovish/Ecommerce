@@ -23,10 +23,10 @@
                 <img src="https://www.thegeniusworks.com/wp-content/uploads/2017/01/glossier-logo.-maniac-magazine.jpg"
                     id="logo">
             </div>
-            <div data-toggle="modal" data-target="#wishlist" onclick='setWishListData()'>
+            <div data-toggle="modal" data-target="#wishlist" >
                 <i class="fas fa-heart wishlist" id="icon"></i>
             </div>
-            <div data-toggle="modal" data-target="#cart" onclick='setCartData()'>
+            <div data-toggle="modal" data-target="#cart">
                 <img src="https://image.flaticon.com/icons/svg/1170/1170678.svg" id="icon">
                 <span class="card-count-red-button">0</span>
             </div>
@@ -86,9 +86,11 @@
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body checkout-modal-wrapper"></div>
-                <div class="p-4 text-center no-data-section-in-cart d-none">
+                <!-- empty cart condition -->
+                <div class="p-4 text-center no-data-section-in-cart">
                     <h4 class="modal-title" id="myModalLabel">No Data In Cart <i class="fas fa-shopping-cart"></i></h4>
                 </div>
+                <!-- total and checkout only seen when cart have data -->
                 <div class="checkout-modal-checkout-section-code d-none">
                     <div class="row">
                         <div class="col-12 text-center mb-2">
@@ -114,7 +116,8 @@
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body wishlist-modal-wrapper"></div>
-                <div class="p-4 text-center no-wishlist-section-in-cart d-none">
+                <!-- empty whishlist condition -->
+                <div class="p-4 text-center no-wishlist-section-in-cart">
                     <h4 class="modal-title" id="myModalLabel">You Have Not wishlist Yet <i
                             class="fas fa-heart-broken"></i></h4>
                 </div>
