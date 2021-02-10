@@ -246,6 +246,7 @@ function setCartData() {
 
 function setWishListData() {
     $('.wishlist-modal-wrapper').empty();
+    $('.card-count-red-button').text(cartArr.length)
     if (favArr.length) {
         $('.no-wishlist-section-in-cart').removeClass('d-block').addClass('d-none')
         for (var i = 0; i < favArr.length; i++) {
