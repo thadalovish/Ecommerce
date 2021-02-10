@@ -228,17 +228,30 @@ function addQuantity(id) {
 function setCartData() {
     $('.checkout-modal-wrapper').empty();
     $('.total-amount-show-in-cart').empty()
+    $('.card-count-red-button').text(cartArr.length)
     let totalCartValue = 0;
-    for (var i = 0; i < cartArr.length; i++) {
-        $('.checkout-modal-wrapper').append("<div class='border w-100 rounded mb-2 mt-2 flex p-4 flex-wrap'><div class='row'><div class='col-md-2'><img src='" + cartArr[i].mainImage + "' class='w-3'></div><div class='col-md-7'><h4 class='text-lg font-medium'>" + cartArr[i].productName + "</h4><p class='text-gray-600 text-xs pl-0'>" + cartArr[i].discription + "</p></div><div class='col-md-3'><h4 class='text-3xl font-medium'>$-" + cartArr[i].price + "</h4></div><div class='col-md-12 mt-2'><div class='row'><div class='col-md-4'><button class='add-to-cart-button w-114' onclick='addToCart(" + cartArr[i].id + ")'><i class='fas fa-trash'></i>&ensp;Delete </button></div><div class='col-md-8'><div class='row'><div class='col-md-12 mt-md-0 mt-2 text-md-center text-left'><button class='add-to-cart-button w-35 d-inline-block' onclick='reduceQuantity(" + cartArr[i].id + ")'><i class='fas fa-minus-circle'></i></button><p class='d-inline-block mr-2'>" + cartArr[i].quantity + "</p><button class='add-to-cart-button w-35 d-inline-block' onclick='addQuantity(" + cartArr[i].id + ")'><i class='fas fa-plus-circle'></i></button></div></div></div></div></div></div></div>");
-        totalCartValue += cartArr[i].quantity * cartArr[i].price;
-        $('.total-amount-show-in-cart').text(totalCartValue)
+    if (cartArr.length) {
+        $('.checkout-modal-checkout-section-code').removeClass('d-none').addClass('d-block')
+        $('.no-data-section-in-cart').removeClass('d-block').addClass('d-none')
+        for (var i = 0; i < cartArr.length; i++) {
+            $('.checkout-modal-wrapper').append("<div class='border w-100 rounded mb-2 mt-2 flex p-4 flex-wrap'><div class='row'><div class='col-md-2'><img src='" + cartArr[i].mainImage + "' class='w-3'></div><div class='col-md-7'><h4 class='text-lg font-medium'>" + cartArr[i].productName + "</h4><p class='text-gray-600 text-xs pl-0'>" + cartArr[i].discription + "</p></div><div class='col-md-3'><h4 class='text-3xl font-medium'>$-" + cartArr[i].price + "</h4></div><div class='col-md-12 mt-2'><div class='row'><div class='col-md-4'><button class='add-to-cart-button w-114' onclick='addToCart(" + cartArr[i].id + ")'><i class='fas fa-trash'></i>&ensp;Delete </button></div><div class='col-md-8'><div class='row'><div class='col-md-12 mt-md-0 mt-2 text-md-center text-left'><button class='add-to-cart-button w-35 d-inline-block' onclick='reduceQuantity(" + cartArr[i].id + ")'><i class='fas fa-minus-circle'></i></button><p class='d-inline-block mr-2'>" + cartArr[i].quantity + "</p><button class='add-to-cart-button w-35 d-inline-block' onclick='addQuantity(" + cartArr[i].id + ")'><i class='fas fa-plus-circle'></i></button></div></div></div></div></div></div></div>");
+            totalCartValue += cartArr[i].quantity * cartArr[i].price;
+            $('.total-amount-show-in-cart').text(totalCartValue)
+        }
+    } else {
+        $('.checkout-modal-checkout-section-code').removeClass('d-block').addClass('d-none')
+        $('.no-data-section-in-cart').removeClass('d-none').addClass('d-block')
     }
 }
 
 function setWishListData() {
     $('.wishlist-modal-wrapper').empty();
-    for (var i = 0; i < favArr.length; i++) {
-        $('.wishlist-modal-wrapper').append("<div class='border w-100 rounded mb-2 mt-2 flex p-4 flex-wrap'><div class='row'><div class='col-md-2'><img src='" + favArr[i].mainImage + "' class='w-3'></div><div class='col-md-7'><h4 class='text-lg font-medium'>" + favArr[i].productName + "</h4><p class='text-gray-600 text-xs pl-0'>" + favArr[i].discription + "</p></div><div class='col-md-3'><h4 class='text-3xl font-medium'>$-" + favArr[i].price + "</h4></div><div class='col-md-12 mt-2'><div class='row'><div class='col-6'><button class='add-to-cart-button w-114' onclick='addFavorite(" + favArr[i].id + ")'><i class='fas fa-trash'></i>&ensp;Delete</button></div><div class='col-6'><button class='add-to-cart-button w-114' onclick='addToCart(" + favArr[i].id + ")'><i class='fas fa-plus-circle'></i>&ensp;Add To Cart</button></div></div></div></div></div>");
+    if (favArr.length) {
+        $('.no-wishlist-section-in-cart').removeClass('d-block').addClass('d-none')
+        for (var i = 0; i < favArr.length; i++) {
+            $('.wishlist-modal-wrapper').append("<div class='border w-100 rounded mb-2 mt-2 flex p-4 flex-wrap'><div class='row'><div class='col-md-2'><img src='" + favArr[i].mainImage + "' class='w-3'></div><div class='col-md-7'><h4 class='text-lg font-medium'>" + favArr[i].productName + "</h4><p class='text-gray-600 text-xs pl-0'>" + favArr[i].discription + "</p></div><div class='col-md-3'><h4 class='text-3xl font-medium'>$-" + favArr[i].price + "</h4></div><div class='col-md-12 mt-2'><div class='row'><div class='col-6'><button class='add-to-cart-button w-114' onclick='addFavorite(" + favArr[i].id + ")'><i class='fas fa-trash'></i>&ensp;Delete</button></div><div class='col-6'><button class='add-to-cart-button w-114' onclick='addToCart(" + favArr[i].id + ")'><i class='fas fa-plus-circle'></i>&ensp;Add To Cart</button></div></div></div></div></div>");
+        }
+    } else {
+        $('.no-wishlist-section-in-cart').removeClass('d-none').addClass('d-block')
     }
 }

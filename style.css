@@ -42,12 +42,6 @@
   justify-content: center;
   font-weight: 550;
  }
- a {
-  color: inherit;
- }
- a:hover { 
- color: blue;
- }
  .menu {
   display: flex;
   position: relative; 
@@ -70,48 +64,7 @@
   margin: 0 auto!important;
   max-width: 130px!important;
   min-width: 90px!important;
- }
- .option {
-  display: flex;
-  position: relative; 
-  -webkit-box-align: center;
-  align-items: center;
-  justify-content: center;
-  height: 39px;
-  background-color: white;
- }
- .option>div {
-   max-width: 150px;
-  height: inherit;
-  min-width: 40px;
-  margin: 1%;
-  justify-content: center;
-  padding: 10px;
-  font-size: 0.8em;
-  border-radius: 3px;
-  transition: all .3s ease;
- }
- .option>div:hover {
-  background-color: #DDD; 
-  cursor: pointer;
-  border: 1px solid grey;
- }
- @media (max-width: 768px) {
-  .option {
-  overflow-x: visible;
-  display: block;
-  text-align: center;
-  justify-contet: center;
-  margin: 0 auto;
-  height: auto;
- }
- .option>div {
-  text-align: center;
-  justify-contet: center;
-  margin: 0 auto;
- }
- }
-  
+ }  
  #icon {
   height: inherit;
   width:20px;
@@ -256,4 +209,15 @@
   height: 35px;
   font-size: 0.7em;
   margin: 0px;
+}
+.card-count-red-button{
+  position: absolute;
+  top: 6px;
+  right: 18px;
+  font-weight: 900;
+  font-size: 11px;
+  padding: 0px 5px;
+  border-radius: 50%;
+  background: red;
+  color: white;
 }
