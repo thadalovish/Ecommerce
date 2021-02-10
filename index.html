@@ -26,7 +26,7 @@
             <div>
                 <i class="fas fa-heart wishlist" id="icon"></i>
             </div>
-            <div>
+            <div data-toggle="modal" data-target="#myModal">
                 <img src="https://image.flaticon.com/icons/svg/1170/1170678.svg" id="icon">
             </div>
         </div>
@@ -74,6 +74,62 @@
         </div>
     </center>
     <div class="row w-100 insert-coloumn-second"></div>
+
+
+    <!--checkout Modal -->
+    <div class="modal pr-0" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Order Summary</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="border w-100 rounded mb-2 mt-2 flex p-4  flex-wrap">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="https://i.pinimg.com/originals/17/b3/bf/17b3bf200e95b5a13f3d1a6657762a79.png"
+                                    class="w-3">
+                            </div>
+                            <div class="col-md-7">
+                                <h4 class="text-lg font-medium">Black Jacket XL</h4>
+                                <p class="text-gray-600 text-xs pl-0">Sold by <b>Aashir Khan</b></p>
+                            </div>
+                            <div class="col-md-3">
+                                <h4 class="text-3xl font-medium">$- 89</h4>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <button class="add-to-cart-button w-114"><i
+                                                class="fas fa-trash"></i>&ensp;DELETE</button>
+                                    </div>
+                                    <div class="col-8">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="add-to-cart-button">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 
     <script src="./index.js"></script>
 </body>
