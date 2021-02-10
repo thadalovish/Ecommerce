@@ -199,6 +199,8 @@ function addFavorite(id) {
     updateCartArray()
     // on delete from wishlist section
     setWishListData()
+    // on delete from card section
+    setCartData()
 }
 
 function reduceQuantity(id) {
