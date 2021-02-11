@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <!-- header-->
     <div class="header">
         <div class="menu">
             <div class="login-section" data-toggle="modal" data-target="#login">
@@ -27,22 +27,24 @@
                     id="logo">
             </div>
             <div data-toggle="modal" data-target="#wishlist">
-                <i class="fas fa-heart wishlist" id="icon"></i>
+                <i class="fas fa-heart wishlist icon" ></i>
             </div>
             <div data-toggle="modal" data-target="#cart">
-                <img src="https://image.flaticon.com/icons/svg/1170/1170678.svg" id="icon">
+                <img src="https://image.flaticon.com/icons/svg/1170/1170678.svg"  class="icon">
                 <span class="card-count-red-button">0</span>
             </div>
         </div>
     </div>
+    <!-- header end-->
+    <!-- landing section-->
     <div class="container mt-3">
         <div class="section first-section-header">
             <img src="https://fashionista.com/.image/t_share/MTY3OTU5ODMyMzU0MTA0NzA0/glossier-pro-tip-eyeliners.jpg"
-                id="grid-pic">
+                class="grid-pic">
         </div>
         <div class="section"><img
                 src="https://cdn.cliqueinc.com/posts/278800/best-glossier-products-278800-1553609606733-promo.700x0c.jpg"
-                id="grid-pic"></div>
+                class="grid-pic"></div>
         <div class="section">
             <div class="text-box">
                 <h style="margin:0 auto; font-size: 2em; display:table;">Here Here!</h>
@@ -53,6 +55,8 @@
             </div>
         </div>
     </div>
+    <!-- landing section end-->
+    <!--centered text partition  -->
     <center>
         <div class="wrapper" id="shopnow">
             <header style="margin: 0 auto;">
@@ -65,7 +69,11 @@
             </header>
         </div>
     </center>
+    <!--centered text partition end -->
+    <!--first Section Parent div -->
     <div class="row w-100 insert-coloumn"></div>
+    <!--first Section Parent div end -->
+    <!--centered text partition  -->
     <center>
         <div class="wrapper">
             <header style="margin: 0 auto;">
@@ -77,21 +85,23 @@
             </header>
         </div>
     </center>
+    <!--centered text partition end -->
+    <!--second Section Parent div -->
     <div class="row w-100 insert-coloumn-second"></div>
-
+    <!--second Section Parent div end-->
     <!--checkout Modal -->
     <div class="modal pr-0" id="cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Order Summary</h4>
+                    <h4 class="modal-title">Order Summary</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body checkout-modal-wrapper"></div>
                 <!-- empty cart condition -->
                 <div class="p-4 text-center no-data-section-in-cart">
-                    <h3 class="modal-title" id="myModalLabel">No Data In Cart <i class="fas fa-shopping-cart"></i></h3>
+                    <h5 class="modal-title">No Data In Cart <i class="fas fa-shopping-cart"></i></h5>
                 </div>
                 <!-- total and checkout only seen when cart have data -->
                 <div class="checkout-modal-checkout-section-code d-none">
@@ -108,33 +118,31 @@
             </div>
         </div>
     </div>
-
-
+    <!--checkout Modal end-->
     <!--wishlist Modal -->
     <div class="modal pr-0" id="wishlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">wish List</h4>
+                    <h4 class="modal-title">wish List</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body wishlist-modal-wrapper"></div>
                 <!-- empty whishlist condition -->
                 <div class="p-4 text-center no-wishlist-section-in-cart">
-                    <h3 class="modal-title" id="myModalLabel">You Have Not wishlist Yet <i
-                            class="fas fa-heart-broken"></i></h3>
+                    <h5 class="modal-title">You Have Not Add Any Product To wishlist <i class="fas fa-heart-broken"></i></h5>
                 </div>
             </div>
         </div>
     </div>
-
+    <!--wishlist Modal end-->
     <!--login Modal-->
     <div class="modal pr-0" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+                    <h4 class="modal-title">Sign in</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
@@ -162,6 +170,7 @@
             </div>
         </div>
     </div>
+    <!--login Modal end-->
 
     <script src="./index.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>

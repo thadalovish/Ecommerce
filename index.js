@@ -244,7 +244,7 @@ function setCartData() {
         $('.checkout-modal-checkout-section-code').removeClass('d-none').addClass('d-block')
         $('.no-data-section-in-cart').removeClass('d-block').addClass('d-none')
         for (var i = 0; i < cartArr.length; i++) {
-            $('.checkout-modal-wrapper').append("<div class='border w-100 rounded mb-2 mt-2 flex p-4 flex-wrap'><div class='row'><div class='col-md-2'><img src='" + cartArr[i].mainImage + "' class='w-3'></div><div class='col-md-7'><h4 class='text-lg font-medium'>" + cartArr[i].productName + "</h4><p class='text-gray-600 text-xs pl-0'>" + cartArr[i].discription + "</p></div><div class='col-md-3'><h4 class='text-3xl font-medium'><i class='fas fa-rupee-sign'></i>-" + cartArr[i].price + "</h4></div><div class='col-md-12 mt-2'><div class='row'><div class='col-md-4'><button class='add-to-cart-button w-114' onclick='addToCart(" + cartArr[i].id + ")'><i class='fas fa-trash'></i>&ensp;Delete </button></div><div class='col-md-8'><div class='row'><div class='col-md-12 mt-md-0 mt-2 text-md-center text-left'><button class='add-to-cart-button w-35 d-inline-block' onclick='reduceQuantity(" + cartArr[i].id + ")'><i class='fas fa-minus-circle'></i></button><p class='d-inline-block mr-2'>" + cartArr[i].quantity + "</p><button class='add-to-cart-button w-35 d-inline-block' onclick='addQuantity(" + cartArr[i].id + ")'><i class='fas fa-plus-circle'></i></button></div></div></div></div></div></div></div>");
+            $('.checkout-modal-wrapper').append("<div class='border w-100 rounded mb-2 mt-2 flex p-4 flex-wrap'><div class='row'><div class='col-md-2'><img src='" + cartArr[i].mainImage + "' class='w-3'></div><div class='col-md-7'><h4 class='text-lg font-medium'>" + cartArr[i].productName + "</h4><p class='text-gray-600 text-xs pl-0'>" + cartArr[i].discription + "</p></div><div class='col-md-3'><h4 class='text-3xl font-medium'><i class='fas fa-rupee-sign'></i>&ensp;" + cartArr[i].price + "</h4></div><div class='col-md-12 mt-2'><div class='row'><div class='col-md-4'><button class='add-to-cart-button w-114' onclick='addToCart(" + cartArr[i].id + ")'><i class='fas fa-trash'></i>&ensp;Delete </button></div><div class='col-md-8'><div class='row'><div class='col-md-12 mt-md-0 mt-2 text-md-center text-left'><button class='add-to-cart-button w-35 d-inline-block' onclick='reduceQuantity(" + cartArr[i].id + ")'><i class='fas fa-minus-circle'></i></button><p class='d-inline-block mr-2'>" + cartArr[i].quantity + "</p><button class='add-to-cart-button w-35 d-inline-block' onclick='addQuantity(" + cartArr[i].id + ")'><i class='fas fa-plus-circle'></i></button></div></div></div></div></div></div></div>");
             totalCartValue += cartArr[i].quantity * cartArr[i].price;
             localStorage.setItem("price", totalCartValue)
             $('.total-amount-show-in-cart').text(totalCartValue)
@@ -261,16 +261,17 @@ function setWishListData() {
     if (favArr.length) {
         $('.no-wishlist-section-in-cart').removeClass('d-block').addClass('d-none')
         for (var i = 0; i < favArr.length; i++) {
-            $('.wishlist-modal-wrapper').append("<div class='border w-100 rounded mb-2 mt-2 flex p-4 flex-wrap'><div class='row'><div class='col-md-2'><img src='" + favArr[i].mainImage + "' class='w-3'></div><div class='col-md-7'><h4 class='text-lg font-medium'>" + favArr[i].productName + "</h4><p class='text-gray-600 text-xs pl-0'>" + favArr[i].discription + "</p></div><div class='col-md-3'><h4 class='text-3xl font-medium'><i class='fas fa-rupee-sign'></i>-" + favArr[i].price + "</h4></div><div class='col-md-12 mt-2'><div class='row'><div class='col-6'><button class='add-to-cart-button w-114' onclick='addFavorite(" + favArr[i].id + ")'><i class='fas fa-trash'></i>&ensp;Delete</button></div><div class='col-6'><button class='add-to-cart-button w-114' onclick='addToCart(" + favArr[i].id + ")'><i class='fas fa-plus-circle'></i>&ensp;Add To Cart</button></div></div></div></div></div>");
+            $('.wishlist-modal-wrapper').append("<div class='border w-100 rounded mb-2 mt-2 flex p-4 flex-wrap'><div class='row'><div class='col-md-2'><img src='" + favArr[i].mainImage + "' class='w-3'></div><div class='col-md-7'><h4 class='text-lg font-medium'>" + favArr[i].productName + "</h4><p class='text-gray-600 text-xs pl-0'>" + favArr[i].discription + "</p></div><div class='col-md-3'><h4 class='text-3xl font-medium'><i class='fas fa-rupee-sign'></i>&ensp;" + favArr[i].price + "</h4></div><div class='col-md-12 mt-2'><div class='row'><div class='col-6'><button class='add-to-cart-button w-114' onclick='addFavorite(" + favArr[i].id + ")'><i class='fas fa-trash'></i>&ensp;Delete</button></div><div class='col-6'><button class='add-to-cart-button w-114' onclick='addToCart(" + favArr[i].id + ")'><i class='fas fa-plus-circle'></i>&ensp;Add To Cart</button></div></div></div></div></div>");
         }
     } else {
         $('.no-wishlist-section-in-cart').removeClass('d-none').addClass('d-block')
     }
 }
+
 function validateForm() {
     var emailValue = document.getElementById("email").value;
     var passwordValue = document.getElementById("password").value;
-    if (emailValue.includes("@") && passwordValue.length > 5) {
+    if (emailValue.includes("@") && emailValue.includes(".") && passwordValue.length > 5) {
         $('#login').modal('hide')
         $('.login-section').removeClass("d-block").addClass("d-none")
         $('.logout-section').removeClass("d-none").addClass("d-block")
@@ -278,6 +279,7 @@ function validateForm() {
         localStorage.setItem("password", passwordValue)
     }
 }
+
 function logout() {
     $('.logout-section').removeClass("d-block").addClass("d-none")
     $('.login-section').removeClass("d-none").addClass("d-block")
@@ -314,7 +316,5 @@ function checkoutValidate() {
         };
         var propay = new Razorpay(options);
         propay.open();
-
-
     }
 }
