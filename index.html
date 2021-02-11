@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Ecommerce Website</title>
+    <title>Glossier store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,14 +16,17 @@
 
     <div class="header">
         <div class="menu">
-            <div>
-                <img src="https://image.flaticon.com/icons/svg/51/51256.svg" id="icon">
+            <div class="login-section" data-toggle="modal" data-target="#login">
+                <span class="auth-button">Login</span>
+            </div>
+            <div class="logout-section d-none" onclick='logout()'>
+                <span class="auth-button padding-adjust-for-logout">Logout</span>
             </div>
             <div class="logo-wrapper">
                 <img src="https://www.thegeniusworks.com/wp-content/uploads/2017/01/glossier-logo.-maniac-magazine.jpg"
                     id="logo">
             </div>
-            <div data-toggle="modal" data-target="#wishlist" >
+            <div data-toggle="modal" data-target="#wishlist">
                 <i class="fas fa-heart wishlist" id="icon"></i>
             </div>
             <div data-toggle="modal" data-target="#cart">
@@ -88,17 +91,18 @@
                 <div class="modal-body checkout-modal-wrapper"></div>
                 <!-- empty cart condition -->
                 <div class="p-4 text-center no-data-section-in-cart">
-                    <h4 class="modal-title" id="myModalLabel">No Data In Cart <i class="fas fa-shopping-cart"></i></h4>
+                    <h3 class="modal-title" id="myModalLabel">No Data In Cart <i class="fas fa-shopping-cart"></i></h3>
                 </div>
                 <!-- total and checkout only seen when cart have data -->
                 <div class="checkout-modal-checkout-section-code d-none">
                     <div class="row">
                         <div class="col-12 text-center mb-2">
-                            <p1>Total Amount : <span class="total-amount-show-in-cart"></span></p1>
+                            <p1>Total Amount : <i class='fas fa-rupee-sign'></i> <span
+                                    class="total-amount-show-in-cart"></span></p1>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="add-to-cart-button">Checkout</button>
+                        <button type="button" class="add-to-cart-button" onclick='checkoutValidate()'>Checkout</button>
                     </div>
                 </div>
             </div>
@@ -118,14 +122,49 @@
                 <div class="modal-body wishlist-modal-wrapper"></div>
                 <!-- empty whishlist condition -->
                 <div class="p-4 text-center no-wishlist-section-in-cart">
-                    <h4 class="modal-title" id="myModalLabel">You Have Not wishlist Yet <i
-                            class="fas fa-heart-broken"></i></h4>
+                    <h3 class="modal-title" id="myModalLabel">You Have Not wishlist Yet <i
+                            class="fas fa-heart-broken"></i></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--login Modal-->
+    <div class="modal pr-0" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div>
+                    <div class="form">
+                        <div class="input-field">
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="Enter Your Email" id="email" name="email" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="password">Password</label>
+                            <input type="password" placeholder="Enter Your Password" id="password" name="password"
+                                minlength="5" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="remember">
+                                <input type="checkbox" name="" id="remember">Remember me
+                            </label>
+                        </div>
+                        <div class="action" onclick='validateForm()'>
+                            <button class="add-to-cart-button">Sign in</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="./index.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
 
 </html>
